@@ -1,0 +1,58 @@
+# ----------------------------
+# GLOBAL PROJECT IGNORE
+# ----------------------------
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE folders
+.vscode/
+.idea/
+
+# ----------------------------
+# BACKEND (Node / Express)
+# ----------------------------
+
+# Dependencies
+/backend/node_modules/
+
+# Build or temp files
+/backend/.env
+/backend/.DS_Store
+
+# ----------------------------
+# FRONTEND (React)
+# ----------------------------
+
+# Dependencies
+/frontend/node_modules/
+
+# Build output
+/frontend/build/
+
+# Cache and misc
+/frontend/.pnp
+/frontend/.pnp.js
+/frontend/.env.local
+/frontend/.DS_Store
+
+# Testing
+/frontend/coverage/
+
+# ----------------------------
+# Miscellaneous
+# ----------------------------
+*.log
