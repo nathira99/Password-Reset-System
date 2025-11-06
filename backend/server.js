@@ -8,10 +8,14 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+const cors = require("cors");
+
 app.use(cors({
-  origin: "https://password-reset-system.netlify.app",
+  origin: ["https://password-reset-system.vercel.app/"], // your frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 app.use("/api/auth", authRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
