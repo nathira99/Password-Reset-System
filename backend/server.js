@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
@@ -11,10 +10,15 @@ app.use(express.json());
 const cors = require("cors");
 
 app.use(cors({
-  origin: ["https://password-reset-system.vercel.app/"], // your frontend domain
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  origin: ["https://password-reset-system-fe.netlify.app/"], // your frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
 }));
+
+app.options("*", cors());
+
 
 app.use("/api/auth", authRoutes);
 
