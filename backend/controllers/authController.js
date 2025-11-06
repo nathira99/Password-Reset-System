@@ -40,7 +40,7 @@ exports.forgotPassword = async (req, res) => {
   user.tokenExpiry = Date.now() + 15 * 60 * 1000;
   await user.save();
 
-  const resetLink = `${process.env.FRONTEND_URL}/reset-password/${token}`;
+  const resetLink = `${process.env.REACT_APP_API_URL}/reset-password/${token}`;
   await sendEmail(user.email, "Password Reset Link", `Click here to reset password: ${resetLink}`);
   res.json({ msg: "Reset link sent to your email" });
 };
