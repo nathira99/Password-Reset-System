@@ -10,7 +10,7 @@ app.use(express.json());
 const cors = require("cors");
 
 app.use(cors({
-  origin: ["https://password-reset-system-fe.netlify.app/"], // your frontend domain
+  origin: ["https://password-reset-system-fe.netlify.app"], // your frontend domain
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
